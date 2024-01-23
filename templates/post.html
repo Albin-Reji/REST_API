@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Form</title>
+  </head>
+  <body>
+    <h2>Input Form</h2>
+
+    <form id="myForm" , action="/process_data" ,method="post">
+      <label for="inputData">Enter Data:</label>
+      <input type="text" id="inputData" name="inputData" required />
+
+      <br /><br />
+
+      <input type="button" value="Submit" onclick="submitForm()" />
+    </form>
+
+    <script>
+      function submitForm() {
+        var inputData = document.getElementById("inputData").value;
+
+        // You can perform additional validation if needed
+
+        // Store or process the data as needed
+        // For example, you can send it to a server using AJAX
+        // Here, I'm just logging it to the console
+        console.log("Data submitted:", inputData);
+      }
+    </script>
+  </body>
+</html>
