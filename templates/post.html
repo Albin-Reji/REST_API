@@ -1,33 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Input Form</title>
-  </head>
-  <body>
-    <h2>Input Form</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Cafe Form</title>
+</head>
+<body>
 
-    <form id="myForm" , action="/process_data" ,method="post">
-      <label for="inputData">Enter Data:</label>
-      <input type="text" id="inputData" name="inputData" required />
+<form action="/add" method="post">
+    <label for="id">Cafe id:</label>
+    <input type="text" id="id" name="id" required><br>
+    <!-- Name Input -->
+    <label for="name">Cafe Name:</label>
+    <input type="text" id="name" name="name" required><br>
 
-      <br /><br />
+    <!-- Map URL Input -->
+    <label for="map_url">Map URL:</label>
+    <input type="text" id="map_url" name="map_url" required><br>
 
-      <input type="button" value="Submit" onclick="submitForm()" />
-    </form>
+    <!-- Image URL Input -->
+    <label for="img_url">Image URL:</label>
+    <input type="text" id="img_url" name="img_url" required><br>
 
-    <script>
-      function submitForm() {
-        var inputData = document.getElementById("inputData").value;
+    <!-- Location Input -->
+    <label for="loc">Location:</label>
+    <input type="text" id="loc" name="loc" required><br>
 
-        // You can perform additional validation if needed
+    <!-- Sockets Input -->
+    <label for="sockets">Has Sockets:</label>
+    <input type="checkbox" id="sockets" name="sockets"><br>
 
-        // Store or process the data as needed
-        // For example, you can send it to a server using AJAX
-        // Here, I'm just logging it to the console
-        console.log("Data submitted:", inputData);
-      }
-    </script>
-  </body>
+    <!-- Toilet Input -->
+    <label for="toilet">Has Toilet:</label>
+    <input type="checkbox" id="toilet" name="toilet"><br>
+
+    <!-- WiFi Input -->
+    <label for="wifi">Has WiFi:</label>
+    <input type="checkbox" id="wifi" name="wifi"><br>
+
+    <!-- Calls Input -->
+    <label for="calls">Can Take Calls:</label>
+    <input type="checkbox" id="calls" name="calls"><br>
+
+    <!-- Seats Input -->
+    <label for="seats">Seats:</label>
+    <input type="text" id="seats" name="seats" required><br>
+
+    <!-- Coffee Price Input -->
+    <label for="coffee_price">Coffee Price:</label>
+    <input type="text" id="coffee_price" name="coffee_price" required><br>
+
+    <!-- Submit button -->
+    <button type="submit">Submit</button>
+</form>
+
+</body>
 </html>
