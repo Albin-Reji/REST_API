@@ -3,13 +3,13 @@ from flask import Flask, render_template, jsonify, request, redirect, url_for, s
 
 app = Flask(__name__)
 
-app.secret_key = 'albin@democracy@123'
+app.secret_key = Key
 
 # Connect to MySQL using mysql.connector
 mydb = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="albin@democracy@1234",
+    password=PassWord, 
     database="rest"
 )
 
