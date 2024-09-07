@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Cafe Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="url"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.checkbox {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group.checkbox label {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<form action="/update/{{ cafe[0] }}" method="post">
+   
+    <div class="form-group">
+         <h2>Update Cafe Details</h2>
+         <h2>Update Cafe Details</h2>
+        <label for="id">Cafe id:</label>
+        <input type="text" id="id" name="id" value="{{ cafe[0] }}" disabled>
+    </div>
+
+    <div class="form-group">
+        <label for="name">Cafe Name:</label>
+        <input type="text" id="name" name="name" value="{{ cafe[1] }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="map_url">Map URL:</label>
+        <input type="url" id="map_url" name="map_url" value="{{ cafe[2] }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="img_url">Image URL:</label>
+        <input type="url" id="img_url" name="img_url" value="{{ cafe[3] }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="loc">Location:</label>
+        <input type="text" id="loc" name="loc" value="{{ cafe[4] }}" required>
+    </div>
+
+    <div class="form-group checkbox">
+        <input type="checkbox" id="sockets" name="sockets" {% if cafe[5] %}checked{% endif %}>
+        <label for="sockets">Has Sockets</label>
+    </div>
+
+    <div class="form-group checkbox">
+        <input type="checkbox" id="toilet" name="toilet" {% if cafe[6] %}checked{% endif %}>
+        <label for="toilet">Has Toilet</label>
+    </div>
+
+    <div class="form-group checkbox">
+        <input type="checkbox" id="wifi" name="wifi" {% if cafe[7] %}checked{% endif %}>
+        <label for="wifi">Has WiFi</label>
+    </div>
+
+    <div class="form-group checkbox">
+        <input type="checkbox" id="calls" name="calls" {% if cafe[8] %}checked{% endif %}>
+        <label for="calls">Can Take Calls</label>
+    </div>
+
+    <div class="form-group">
+        <label for="seats">Seats:</label>
+        <input type="text" id="seats" name="seats" value="{{ cafe[9] }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="coffee_price">Coffee Price:</label>
+        <input type="text" id="coffee_price" name="coffee_price" value="{{ cafe[10] }}" required>
+    </div>
+
+    <button type="submit">Update</button>
+</form>
+
+</body>
+</html>
